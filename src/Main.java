@@ -10,7 +10,7 @@ public class Main {
         int line = 0;  //for the menu printing to create lines of =
         int f_loop = 0; //for loop variable
         Scanner choice = new Scanner(System.in); //scanner for the choice in the menu
-        int ch; //variable to save the choice
+        int ch ; //variable to save the choice
 
         do {
             for(line=0;line<2;line++) {
@@ -33,13 +33,51 @@ public class Main {
                     System.out.println("2. View account");
                     System.out.println("3. Deposit money");
                     System.out.println("4. Withdraw money");
-                    System.out.println("5. Exit");
-                    while (!choice.hasNextInt()) {
-                        System.out.println("Please enter an integer.");
-                        choice.next(); // discard the invalid input
-                    }
+                    System.out.println("5. Transfer money");
+                    System.out.println("6. View all accounts");
+                    System.out.println("7. Delete account");
+                    System.out.println("8. Exit\n");
 
-                   dwVar = 0;
+
+                   do{
+                       System.out.println("Please enter an integer 1-8 to access the menu");
+                       if(choice.hasNextInt()){
+                           ch = choice.nextInt();
+                           if(ch > 0 && ch < 9){
+                               break;
+                           }
+                           else{
+                               System.out.println("Please try again\n");
+                           }
+                       }
+                       else{
+                           System.out.println("Please try again\n");
+                           choice.nextLine();
+                       }
+                   }while(true);
+
+                    switch (ch){ //to access menu
+                        case 1:
+                            BankAcc BA = new BankAcc();
+                            BA.FnameCheck();
+                            BA.AccANumberCheck();
+                            break;
+                        case 2:
+                            break;
+                        case 3:
+                            break;
+                        case 4:
+                            break;
+                        case 5:
+                            break;
+                        case 6:
+                            break;
+                        case 7:
+                            break;
+                        case 8:
+                            dwVar = 0;
+                            break;
+                    }
 
                 }
             }
