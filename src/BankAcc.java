@@ -4,7 +4,7 @@ public class BankAcc {
 
     protected String Fname ;
     protected String Lname ;
-    protected double Balance ;
+    protected double Balance = 0;
     protected String AccNumber;
 
 
